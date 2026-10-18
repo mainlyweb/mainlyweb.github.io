@@ -3,42 +3,41 @@
 (function () {
   "use strict";
   var PRODUCTS = [
-    { id: "ribbon-bow", cat: "hair", name: "Ribbon-Tie Hair Bow", tone: "Blush",
-      price: 12.50, was: 17.00, motif: "bow",
-      desc: "A hand-tied ribbon bow on a gentle clip, in a matte satin finish.",
-      opts: ["Blush", "Ivory", "Sage"] },
-    { id: "pearl-pendant", cat: "jewellery", name: "Faux-Pearl Pendant", tone: "Ivory",
-      price: 18.00, was: 24.00, motif: "pendant",
-      desc: "A single faux-pearl pendant on a fine gold-tone chain, 45 cm with an extender.",
-      opts: ["Ivory", "Champagne"] },
-    { id: "hoop-trio", cat: "jewellery", name: "Mini Hoop Trio", tone: "Gold-tone",
-      price: 14.00, was: 19.00, motif: "hoops",
-      desc: "Three pairs of small gold-tone hoops in graduated sizes, nickel-safe posts.",
-      opts: ["Gold-tone", "Silver-tone"] },
-    { id: "scrunchie-set", cat: "hair", name: "Satin Scrunchie Set", tone: "Set of 3",
-      price: 9.50, was: 13.00, motif: "scrunchie",
-      desc: "Three satin scrunchies in soft neutrals, gentle on hair and easy on wrists.",
-      opts: ["Neutrals", "Pastels"] },
-    { id: "phone-strap", cat: "bags", name: "Beaded Phone Strap", tone: "Rose",
-      price: 11.00, was: 15.00, motif: "strap",
-      desc: "A beaded wrist strap that clips to a phone case — part charm, part insurance.",
-      opts: ["Rose", "Pearl mix"] },
-    { id: "card-wallet", cat: "bags", name: "Envelope Card Wallet", tone: "Cream",
-      price: 19.50, was: 25.00, motif: "wallet",
-      desc: "A slim envelope wallet in cream faux leather with room for six cards and folded notes.",
-      opts: ["Cream", "Tan"] }
+    { id: "grip-case", cat: "cases", name: "Everyday Grip Case", tone: "Slate",
+      price: 16.50, was: 22.00, motif: "case",
+      desc: "A slim everyday case with a matte grip back and raised edges around the screen and camera.",
+      opts: ["Slate", "Sand", "Ink"] },
+    { id: "clear-case", cat: "cases", name: "Clear View Case", tone: "Glacier",
+      price: 15.00, was: 20.00, motif: "case",
+      desc: "A clear case that shows the phone instead of hiding it, with cushioned corners.",
+      opts: ["Glacier", "Smoke"] },
+    { id: "glass-duo", cat: "glass", name: "Tempered Glass Duo", tone: "2-pack",
+      price: 13.50, was: 18.00, motif: "glass",
+      desc: "Two tempered-glass screen protectors with an alignment tray, so the spare is ready before you need it.",
+      opts: ["Standard", "Privacy"] },
+    { id: "mag-wallet", cat: "carry", name: "Snap-On Card Wallet", tone: "Magnetic",
+      price: 21.00, was: 26.00, motif: "wallet",
+      desc: "A magnetic wallet that snaps to the back of a case and carries two cards.",
+      opts: ["Tan", "Black"] },
+    { id: "braid-cable", cat: "charge", name: "Braided Charge Cable", tone: "2 m · USB-C",
+      price: 11.50, was: 15.00, motif: "cable",
+      desc: "A 2-metre braided USB-C cable with reinforced ends, rated for daily coiling.",
+      opts: ["Graphite", "Cream"] },
+    { id: "charge-dock", cat: "charge", name: "Desktop Charge Dock", tone: "USB-C",
+      price: 27.00, was: 34.00, motif: "dock",
+      desc: "A weighted desktop dock that holds the phone at reading angle while it charges.",
+      opts: ["White", "Charcoal"] }
   ];
 
   var MOTIFS = {
-    bow:      '<path d="M60 60 C 40 40, 22 44, 24 60 C 22 76, 40 80, 60 60 C 80 40, 98 44, 96 60 C 98 76, 80 80, 60 60"/><circle cx="60" cy="60" r="5"/>',
-    pendant:  '<path d="M38 16 C 46 44, 74 44, 82 16"/><circle cx="60" cy="62" r="11"/>',
-    hoops:    '<circle cx="44" cy="58" r="17"/><circle cx="76" cy="58" r="17"/><path d="M44 34 V26 M76 34 V26"/>',
-    scrunchie:'<path d="M60 28 C 84 28, 92 48, 84 66 C 76 84, 44 84, 36 66 C 28 48, 36 28, 60 28"/><circle cx="60" cy="56" r="9"/>',
-    strap:    '<path d="M34 18 C 34 60, 86 60, 86 18"/><circle cx="42" cy="48" r="4"/><circle cx="60" cy="56" r="4"/><circle cx="78" cy="48" r="4"/>',
-    wallet:   '<rect x="26" y="38" width="68" height="46" rx="8"/><path d="M26 54 H94"/>'
+    case:  '<rect x="34" y="14" width="52" height="92" rx="10"/><circle cx="48" cy="30" r="6"/>',
+    glass: '<rect x="34" y="14" width="52" height="92" rx="6"/><path d="M40 96 L80 24"/>',
+    wallet:'<rect x="26" y="38" width="68" height="46" rx="8"/><path d="M26 54 H94"/>',
+    cable: '<path d="M30 96 C 60 60, 60 60, 92 26"/><rect x="86" y="14" width="10" height="16" rx="2"/>',
+    dock:  '<path d="M28 96 H92"/><rect x="44" y="22" width="34" height="58" rx="6" transform="rotate(10 61 51)"/>'
   };
   function art(p, cls) {
-    return '<svg class="' + (cls || "card-art") + '" viewBox="0 0 120 120" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true">' + (MOTIFS[p.motif] || MOTIFS.bow) + "</svg>";
+    return '<svg class="' + (cls || "card-art") + '" viewBox="0 0 120 120" fill="none" stroke="currentColor" stroke-width="2.4" aria-hidden="true">' + (MOTIFS[p.motif] || MOTIFS.case) + "</svg>";
   }
   function money(n) { return "$" + n.toFixed(2); }
 
