@@ -130,26 +130,11 @@ h1{
 .order-list{list-style:none;margin:0;padding:0;border-bottom:1px solid var(--line)}
 .order-list li{padding:24px 0 28px;border-top:1px solid var(--line)}
 .order-head{
-  display:grid;grid-template-columns:1fr auto auto;gap:8px 38px;align-items:center;
+  display:grid;grid-template-columns:1fr auto;gap:8px 38px;align-items:center;
 }
 .order-info h3{margin:0 0 4px;font-family:var(--serif);font-weight:600;font-size:1.18rem;line-height:1.2;color:var(--ink)}
 .order-info p{margin:0;max-width:560px;font-size:.97rem;line-height:1.55;color:var(--soft)}
-.order-price{font-size:.88rem;color:var(--muted);white-space:nowrap}
 .order-note{font-size:.95rem;font-weight:500;white-space:nowrap;color:var(--muted)}
-.tier-list{
-  display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px 30px;
-  margin-top:22px;
-}
-.tier{border-top:1px solid var(--line-strong);padding-top:14px}
-.tier h4{
-  margin:0 0 6px;font-family:var(--serif);font-weight:600;
-  font-size:1.04rem;line-height:1.28;color:var(--ink);
-}
-.tier-meta{
-  margin:0 0 8px;font-size:.78rem;font-weight:600;
-  letter-spacing:.07em;text-transform:uppercase;color:var(--accent);
-}
-.tier p:last-child{margin:0;font-size:.92rem;line-height:1.55;color:var(--soft)}
 
 /* ---------- Footer (disclaimers verbatim) ---------- */
 footer{margin-top:64px;border-top:1px solid var(--line);padding:26px 0 40px;color:var(--muted);font-size:.9rem}
@@ -166,7 +151,6 @@ footer p{margin:0 0 8px;max-width:820px}
   .order{padding-top:52px}
   .order-list li{padding:20px 0 24px}
   .order-head{grid-template-columns:1fr;gap:5px}
-  .tier-list{grid-template-columns:1fr;gap:18px;margin-top:18px}
 }
 @media(prefers-reduced-motion:reduce){
   .card,.shot{transition:none}
