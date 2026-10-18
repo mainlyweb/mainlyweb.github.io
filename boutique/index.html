@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tessell Supply — Phone Accessories (Display Demo)</title>
+<meta name="description" content="Display demo: a fictional phone-accessories storefront built to show storefront build quality. Not a real shop; no orders are taken.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;900&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<p class="demo-banner">DISPLAY DEMO — fictional storefront built to show build quality · not a real shop · no orders are taken</p>
+<header class="site-head">
+  <a class="brand" href="./">Tessell <span>Supply</span></a>
+  <nav class="head-nav" aria-label="Sections">
+    <a href="#catalogue">Catalogue</a><a href="#policies">Policies</a><a href="../">← All demos</a>
+  </nav>
+  <button class="cart-btn" id="cart-open" type="button">Cart <span class="cart-count" id="cart-count">0</span></button>
+</header>
+
+<main>
+<section class="hero">
+  <p class="eyebrow">Phone accessories — sample catalogue</p>
+  <h1>Cases, glass &amp; charge gear, <em>sorted in one shelf.</em></h1>
+  <p class="lede">A complete sample storefront: browse the catalogue, open a product, pick a colour, and run the cart end to end. Every product, price and policy on this page is sample data written for this demo.</p>
+</section>
+
+<section id="catalogue" class="catalogue">
+  <div class="cat-head">
+    <h2>The catalogue</h2>
+    <div class="filters" role="group" aria-label="Filter products">
+      <button type="button" class="chip is-on" data-filter="all">All</button>
+      <button type="button" class="chip" data-filter="cases">Cases</button>
+      <button type="button" class="chip" data-filter="glass">Glass</button>
+      <button type="button" class="chip" data-filter="charge">Charge</button>
+      <button type="button" class="chip" data-filter="carry">Carry</button>
+    </div>
+  </div>
+  <div class="grid" id="grid"></div>
+  <p class="grid-note" id="grid-note" aria-live="polite"></p>
+</section>
+
+<section id="policies" class="policies">
+  <h2>Sample policies</h2>
+  <div class="policy-cols">
+    <div><h3>Shipping</h3><p>Sample policy: orders leave in 1–2 business days; delivery in 3–7 business days, tracked. (Demo text — no real orders exist.)</p></div>
+    <div><h3>Returns</h3><p>Sample policy: 30 days to change your mind, unused items, prepaid label in the box. (Demo text.)</p></div>
+    <div><h3>Fit promise</h3><p>Sample policy: if a case doesn&rsquo;t fit the model you picked, the replacement ships free. (Demo text.)</p></div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <p><strong>Tessell Supply is a fictional brand</strong> created for this display demo. Products, prices, and policies are sample data; the storefront is shown so you can judge the build — layout, product pages, and a working cart — the way a customer would use it.</p>
+  <p><a href="../">← Back to all demos</a></p>
+</footer>
+
+<div class="drawer-scrim" id="scrim" hidden></div>
+<aside class="drawer" id="drawer" aria-label="Cart" hidden>
+  <div class="drawer-head"><h2>Your cart</h2><button type="button" id="cart-close" aria-label="Close cart">×</button></div>
+  <div class="drawer-lines" id="drawer-lines"></div>
+  <div class="drawer-foot">
+    <p class="drawer-total"><span>Subtotal</span><strong id="drawer-total">$0.00</strong></p>
+    <p class="drawer-note">Demo checkout — no payment is taken and nothing is ordered.</p>
+    <button type="button" class="checkout-btn" id="checkout-btn">Demo checkout</button>
+    <p class="drawer-done" id="drawer-done" hidden>That&rsquo;s the whole flow — in a live store this is where payment would happen.</p>
+  </div>
+</aside>
+
+<dialog class="quick" id="quick">
+  <button type="button" class="quick-close" id="quick-close" aria-label="Close product view">×</button>
+  <div class="quick-art" id="quick-art" aria-hidden="true"></div>
+  <div class="quick-body">
+    <p class="quick-cat" id="quick-cat"></p>
+    <h2 id="quick-name"></h2>
+    <p class="quick-desc" id="quick-desc"></p>
+    <p class="quick-price" id="quick-price"></p>
+    <div class="quick-opts" id="quick-opts"></div>
+    <button type="button" class="add-btn" id="quick-add">Add to cart</button>
+  </div>
+</dialog>
+
+<script src="app.js"></script>
+</body>
+</html>
